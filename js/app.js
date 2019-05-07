@@ -1,6 +1,6 @@
 'use strict';
 
-// for each item in array we will search for keywords. keywords will be linked to keywords in our drop down men
+// for each item in array we will search for keywords. keywords will be linked to keywords in our drop down menu
 // creating a funciton that will creat unique object for our gallery, based on the data it will read from the local json file
 
 function Gallery(horn) {
@@ -37,9 +37,9 @@ Gallery.prototype.toHtml = function () {
 
 // one page at a time
 
-let jp1 = '/lab-02-repository/data/page-1.json';
+let jp1 = './data/page-1.json';
 
-let jp2 = '/lab-02-repository/data/page-2.json';
+let jp2 = './data/page-2.json';
 
 let tab1 = $('#one');
 
@@ -56,7 +56,7 @@ Gallery.readJson = (jpage, galleryset, place, filter) => {
                 galleryset.push(new Gallery(item));
             })
         })
-        //then we want ot send them to the html
+        //then we want to send them to the html
         .then(place)
         .then(Gallery.loadKeywords)
         // .then(Gallery.populateFilter)
